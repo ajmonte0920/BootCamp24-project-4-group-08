@@ -4,22 +4,30 @@ from flask import Flask, render_template
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-# Route to render index.html template
+# Route to render home_page.html template
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("home_page.html")
 
-@app.route("/index")
+@app.route("/home")
 def home():
-    return render_template("index.html")
+    return render_template("home_page.html")
 
 @app.route("/about_us")
 def about_us():
     return render_template("about_us.html")
 
-@app.route("/tableau")
-def tableau():
-    return render_template("tableau1.html")
+@app.route("/tableau_ajm")
+def tableau_ajm():
+    return render_template("tableau(ajm dashboard).html")  # Reference the correct HTML file
+
+@app.route("/tableau_jl")
+def tableau_jl():
+    return render_template("tableau(jl dashboard).html")  # Reference the correct HTML file
+
+@app.route("/gradio")
+def gradio():
+    return render_template("gradio.html")
 
 @app.after_request
 def add_header(response):
@@ -27,14 +35,13 @@ def add_header(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Content-Security-Policy"] = "frame-ancestors 'self' public.tableau.com;"
     return response
-
 
 # Main
 if __name__ == "__main__":
     app.run(debug=True)
+
+
 
 
 
