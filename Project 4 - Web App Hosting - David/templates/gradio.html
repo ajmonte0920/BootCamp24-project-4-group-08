@@ -3,13 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Gradio</title>
-    <script type="text/javascript">
-        window.location.href = "https://08868b2f0a09d30fe9.gradio.live/";
-    </script>
+    <title>Tableau and Gradio Embedding</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .dashboard, .gradio {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://08868b2f0a09d30fe9.gradio.live/">click here</a>.</p>
+
+    <nav>
+        <a href="#dashboard1">Dashboard 1</a>
+        <a href="#dashboard2">Dashboard 2</a>
+        <a href="#gradio">Gradio Interface</a>
+    </nav>
+
+    <div id="dashboard1" class="dashboard">
+        <h1>Embedded Tableau Dashboard 1</h1>
+        <div id="tableauViz1"></div>
+    </div>
+
+    <div id="dashboard2" class="dashboard">
+        <h1>Embedded Tableau Dashboard 2</h1>
+        <div id="tableauViz2"></div>
+    </div>
+
+    <div id="gradio" class="gradio">
+        <h1>Embedded Gradio Interface</h1>
+        <iframe 
+            src="https://08868b2f0a09d30fe9.gradio.live/" 
+            frameborder="0">
+        </iframe>
+    </div>
+
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script>
+        // JavaScript to handle navigation and show different sections
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                // Hide all sections
+                document.querySelectorAll('.dashboard, .gradio').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the selected section
+                const target = this.getAttribute('href').substring(1);
+                document.getElementById(target).style.display = 'block';
+
+                // Load Tableau dashboards dynamically if they haven't been loaded yet
+                if (target === 'dashboard1' && !document.getElementById('tableauViz1').hasChildNodes()) {
+                    const vizUrl1 = "https://public.tableau.com/app/profile/andrew.montemayor/viz/Project4_Dashboard1ajm/Dashboard1?publish=yes";
+                    const options = {
+                        hideTabs: true,
+                        width: "100%",
+                        height: "600px"
+                    };
+                    const containerDiv1 = document.getElementById('tableauViz1');
+                    new tableau.Viz(containerDiv1, vizUrl1, options);
+                }
+
+                if (target === 'dashboard2' && !document.getElementById('tableauViz2').hasChildNodes()) {
+                    const vizUrl2 = "https://public.tableau.com/app/profile/judith.landa/viz/Question2_17278289749860/Dashboard1?publish=yes";
+                    const options = {
+                        hideTabs: true,
+                        width: "100%",
+                        height: "600px"
+                    };
+                    const containerDiv2 = document.getElementById('tableauViz2');
+                    new tableau.Viz(containerDiv2, vizUrl2, options);
+                }
+            });
+        });
+
+        // Automatically load the first dashboard on page load
+        document.querySelector('nav a[href="#dashboard1"]').click();
+    </script>
+
 </body>
 </html>
-
