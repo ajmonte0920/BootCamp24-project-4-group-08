@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> <!-- Include PapaParse -->
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .movie-card {
+            width: 200px;
+            margin: 20px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Movie Recommender System</h1>
+    <p>Enter a movie title to receive top 10 recommendations based on similarity.</p>
+    <input type="text" id="movieInput" placeholder="Enter a movie title...">
+    <button id="recommendButton">Get Recommendations</button>
+    <div id="recommendationsOutput"></div>
+
+    <script src="../static/js/logic.js"></script> <!-- Ensure this path is correct -->
+</body>
+</html>
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - StreamFlix</title>
+    <title>Home - BoothFlix</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -36,16 +36,39 @@
                 6px 6px 0px rgba(0, 0, 0, 0.5);
         }
         .banner {
-            background-image: url('banner-image.jpg'); /* Placeholder for banner image */
+            position: relative;
+            overflow: hidden;
             height: 300px;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .banner-image {
+            background-image: url('../static/pictures/Movie_film_strip.jpg'); /* Your conveyor belt image */
+            background-size: auto 100%; /* Maintain aspect ratio and fill height */
+            width: 200%; /* Twice the width for the scrolling effect */
+            height: 100%;
+            position: absolute;
+            animation: scroll 10s linear infinite; /* Adjust timing as needed */
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: #ffffff;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            border-bottom: 5px solid #e50914;
+            z-index: 10; /* Ensure text appears above the image */
         }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move left by half of the banner width */
+            }
+        }
+
         .button-container {
             display: flex;
             justify-content: space-around;
@@ -111,11 +134,14 @@
 </head>
 <body>
     <header>
-        <h1>StreamFlix</h1>
-        <h2>Your Home for Movies and Series</h2>
+        <h1>BoothFlix</h1>
+        <h2>Movie Info & Recommender</h2>
     </header>
     <div class="banner">
-        <h2>Watch Anywhere. Cancel Anytime.</h2>
+        <div class="banner-image"></div>
+        <div class="banner-text">
+            <h2></h2>
+        </div>
     </div>
     <div class="button-container">
         <a href="/tableau_ajm" class="button">View AJM Dashboard</a>
@@ -144,23 +170,7 @@
             </div>
             <div class="movie">
                 <h4>Movie Title 5</h4>
-                <p>Genre: Horror</p>
-            </div>
-            <div class="movie">
-                <h4>Movie Title 6</h4>
-                <p>Genre: Romance</p>
-            </div>
-            <div class="movie">
-                <h4>Movie Title 7</h4>
-                <p>Genre: Thriller</p>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 StreamFlix. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+
 
 
 
