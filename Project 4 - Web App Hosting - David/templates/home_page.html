@@ -1,74 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>About Us</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - StreamFlix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Additional Custom Styles */
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #141414 30%, #1c1c1c 100%);
+            color: #ffffff;
         }
-
-        .group-member {
-            margin: 0 15px; /* Spacing between group members */
+        header {
+            background-color: rgba(229, 9, 20, 0.9);
             padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid #e50914;
         }
-
-        .group-section {
-            margin-top: 30px;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 
+                2px 2px 0px rgba(0, 0, 0, 0.5),
+                4px 4px 0px rgba(0, 0, 0, 0.5),
+                6px 6px 0px rgba(0, 0, 0, 0.5);
         }
-
+        h2 {
+            font-weight: 400;
+            text-shadow: 
+                2px 2px 0px rgba(0, 0, 0, 0.5),
+                4px 4px 0px rgba(0, 0, 0, 0.5),
+                6px 6px 0px rgba(0, 0, 0, 0.5);
+        }
+        .banner {
+            background-image: url('banner-image.jpg'); /* Placeholder for banner image */
+            height: 300px;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            border-bottom: 5px solid #e50914;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .button {
+            flex: 1;
+            margin: 0 10px; /* Spacing between buttons */
+            padding: 15px;
+            font-size: 16px;
+            color: black; /* Button text color */
+            background-color: #e50914; /* Netflix red */
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.5),
+                2px 2px 0 rgba(0, 0, 0, 0.5);
+        }
+        .button:hover {
+            background-color: #c0070d; /* Darker shade for hover */
+        }
+        .content {
+            padding: 20px;
+        }
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .movie {
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .movie:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+        .movie h4 {
+            margin: 10px 0;
+            font-size: 1.25em;
+            font-weight: 700;
+        }
+        .movie p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.9);
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
-
 <body>
-    <!-- Title Section -->
-    <div class="text-center">
-        <h1>Project 4: Group 8</h1>
+    <header>
+        <h1>StreamFlix</h1>
+        <h2>Your Home for Movies and Series</h2>
+    </header>
+    <div class="banner">
+        <h2>Watch Anywhere. Cancel Anytime.</h2>
     </div>
-
-    <!-- Group Members Section -->
-    <div class="container group-section">
-        <div class="row justify-content-center">
-            <!-- Group Member 1 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 1</h3>
-                <p>Short statement about Member 1.</p>
+    <div class="button-container">
+        <a href="tableau(ajm dashboard).html" class="button">AJM Dashboard</a>
+        <a href="tableau(jl dashboard).html" class="button">JL Dashboard</a>
+        <a href="gradio_recommender.html" class="button">Movie Recommender</a>
+        <a href="about_us.html" class="button">About Us</a>
+    </div>
+    <div class="content">
+        <h3>Featured Movies</h3>
+        <div class="movie-list">
+            <div class="movie">
+                <h4>Movie Title 1</h4>
+                <p>Genre: Action</p>
             </div>
-
-            <!-- Group Member 2 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 2</h3>
-                <p>Short statement about Member 2.</p>
+            <div class="movie">
+                <h4>Movie Title 2</h4>
+                <p>Genre: Drama</p>
             </div>
-
-            <!-- Group Member 3 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 3</h3>
-                <p>Short statement about Member 3.</p>
+            <div class="movie">
+                <h4>Movie Title 3</h4>
+                <p>Genre: Comedy</p>
             </div>
-
-            <!-- Group Member 4 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 4</h3>
-                <p>Short statement about Member 4.</p>
+            <div class="movie">
+                <h4>Movie Title 4</h4>
+                <p>Genre: Sci-Fi</p>
+            </div>
+            <div class="movie">
+                <h4>Movie Title 5</h4>
+                <p>Genre: Horror</p>
+            </div>
+            <div class="movie">
+                <h4>Movie Title 6</h4>
+                <p>Genre: Romance</p>
+            </div>
+            <div class="movie">
+                <h4>Movie Title 7</h4>
+                <p>Genre: Thriller</p>
             </div>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2024 StreamFlix. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

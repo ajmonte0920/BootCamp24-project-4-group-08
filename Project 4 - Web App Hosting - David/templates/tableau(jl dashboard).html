@@ -14,11 +14,33 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black; /* Button text color */
+            background-color: #e50914; /* Match with the top border color */
+            text-decoration: none;
+            border-radius: 5px;
+            text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.5),
+                2px 2px 0 rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #c0070d; /* Darker shade for hover */
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1 class="text-center mt-5">Genre Analysis: Trends in Popularity and Ratings</h1>
+
+        <!-- Back Button -->
+        <a href="home_page.html" class="back-button">Back to Home</a>
         
         <div class="tableauPlaceholder" id="vizContainer" style="position: relative;">
             <noscript>
@@ -55,3 +77,4 @@
 </body>
 
 </html>
+

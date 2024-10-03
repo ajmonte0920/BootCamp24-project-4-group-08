@@ -1,74 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>About Us</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - StreamFlix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Additional Custom Styles */
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #141414 30%, #1c1c1c 100%);
+            color: #ffffff;
         }
-
-        .group-member {
-            margin: 0 15px; /* Spacing between group members */
+        header {
+            background-color: rgba(229, 9, 20, 0.9);
             padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid #e50914;
         }
-
-        .group-section {
-            margin-top: 30px;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 
+                2px 2px 0px rgba(0, 0, 0, 0.5),
+                4px 4px 0px rgba(0, 0, 0, 0.5),
+                6px 6px 0px rgba(0, 0, 0, 0.5);
         }
-
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black; /* Button text color */
+            background-color: #e50914; /* Match with the top border color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.5),
+                2px 2px 0 rgba(0, 0, 0, 0.5);
+        }
+        .back-button:hover {
+            background-color: #c0070d; /* Darker shade for hover */
+        }
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .team-member {
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .team-member h4 {
+            margin: 10px 0;
+            font-size: 1.25em;
+            font-weight: 700;
+        }
+        .team-member p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.9);
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
-
 <body>
-    <!-- Title Section -->
-    <div class="text-center">
-        <h1>Project 4: Group 8</h1>
-    </div>
-
-    <!-- Group Members Section -->
-    <div class="container group-section">
-        <div class="row justify-content-center">
-            <!-- Group Member 1 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 1</h3>
-                <p>Short statement about Member 1.</p>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <div class="content">
+        <a href="home_page.html" class="back-button">Back to Home</a> <!-- Link to the home page -->
+        <h2>Welcome to StreamFlix</h2>
+        <p>At StreamFlix, we are passionate about bringing you the best in movies and series from around the world. Our dedicated team works tirelessly to curate an extensive collection that caters to all tastes and preferences.</p>
+        <h3>Meet Our Team</h3>
+        <div class="team">
+            <div class="team-member">
+                <img src="team-member1.jpg" alt="Team Member 1"> <!-- Placeholder for team member image -->
+                <h4>John Doe</h4>
+                <p>Founder & CEO</p>
             </div>
-
-            <!-- Group Member 2 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 2</h3>
-                <p>Short statement about Member 2.</p>
+            <div class="team-member">
+                <img src="team-member2.jpg" alt="Team Member 2"> <!-- Placeholder for team member image -->
+                <h4>Jane Smith</h4>
+                <p>Head of Content</p>
             </div>
-
-            <!-- Group Member 3 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 3</h3>
-                <p>Short statement about Member 3.</p>
+            <div class="team-member">
+                <img src="team-member3.jpg" alt="Team Member 3"> <!-- Placeholder for team member image -->
+                <h4>Emily Johnson</h4>
+                <p>Marketing Director</p>
             </div>
-
-            <!-- Group Member 4 -->
-            <div class="col-md-3 group-member">
-                <h3>Member 4</h3>
-                <p>Short statement about Member 4.</p>
+            <div class="team-member">
+                <img src="team-member4.jpg" alt="Team Member 4"> <!-- Placeholder for team member image -->
+                <h4>Michael Brown</h4>
+                <p>Technical Lead</p>
             </div>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2024 StreamFlix. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
+
+
+
+
