@@ -19,7 +19,7 @@ This link expires in about 24 hours. We will continuously update the gradio.html
 If a link expires and we somehow don’t update with a new link. The WebApp will still work but the movie recommender section will not.”
 
 ************************************************************
-Current Movie recommender Link (Gradio Link):    https://98b8f3fb5447ee5839.gradio.live/
+Current Movie recommender Link (Gradio Link):    https://b33a757b42ba29fdcc.gradio.live/
 
 
 ***** Sincere apologies for the nuances, we had some severe "work around issues" that we had to navigate and we simply began to run out of time.
