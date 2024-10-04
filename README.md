@@ -8,13 +8,19 @@ Our project analyzes a dataset of over 16,000 movies from 1910 to 2024, sourced 
 
 MUST RUN “app.py” FILE TO ACCESS WEBAPP!!!!!!!!!!!!!!!
 
+THE FILES MUST BE RAN LOCALLY. THE WHOLE REPO FOLDER (BootCamp24-project-4-group-08) MUST BE PULLED TO THE  LOCAL ENVIRONMENT. Then the "app.py" file (located in the templates folder) can be ran and the web app can be accessed through the URL generated in the terminal (also included below).
+
 WebApp Link:	http://127.0.0.1:5000
+
 *****************************************************************
 ATTENTION!!!!! 
 “ The link to the  movie recommender is directly embedded in the gradio.html file that is called by the app.py file. 
-This link expires within about 24 hours. We will continuously update the gradio.html file, containing the link, with any newly generated links.
+This link expires in about 24 hours. We will continuously update the gradio.html file, containing the link, with any newly generated links.
 If a link expires and we somehow don’t update with a new link. The WebApp will still work but the movie recommender section will not.”
 
 ************************************************************
 Current Movie recommender Link (Gradio Link):    https://98b8f3fb5447ee5839.gradio.live/
+
+
+***** Sincere apologies for the nuances, we had some severe "work around issues" that we had to navigate and we simply began to run out of time.
 
